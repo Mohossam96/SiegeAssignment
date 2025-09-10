@@ -1,6 +1,6 @@
 # Architecture Design: Document Metadata & Search System
 
-## 1. Introduction & Goals
+## 1. Introduction & Goals 
 
 This document outlines the architecture for a system designed to ingest, process, version, and provide fast search capabilities for Chemical Safety Data Sheets (SDS) provided as PDF documents.
 
