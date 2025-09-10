@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Moq;
 using Pricing.Application.Common.Interfaces;
 using Pricing.Application.Prices;
@@ -41,7 +42,8 @@ public class PriceServiceTests
             .ReturnsAsync(1.0m);
 
         // 3. Create the service instance with our test dependencies
-        var priceService = new PriceService(context, mockRateProvider.Object);
+        var memoryCache = new MemoryCache(new MemoryCacheOptions()); 
+        var priceService = new PriceService(context, mockRateProvider.Object, memoryCache);
         var query = new BestPriceQuery { Sku = "TIED-SKU", Qty = 1, Date = DateOnly.FromDateTime(DateTime.Now), Currency = "USD" };
 
         // ACT
