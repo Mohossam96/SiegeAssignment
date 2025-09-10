@@ -16,6 +16,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Collection\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <TargetFramework>net9.0</TargetFramework>

@@ -14,6 +14,7 @@ public class PricingDbContext : DbContext
     public DbSet<Supplier> Suppliers { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Price> Prices { get; set; }
+    public DbSet<Log> Logs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

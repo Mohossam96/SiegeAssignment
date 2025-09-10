@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Pricing.Api.Endpoints;
+using Pricing.Api.Middleware;
 using Pricing.Application.Common.Interfaces;
 using Pricing.Application.Common.Services;
 using Pricing.Application.Prices;
@@ -20,6 +21,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPriceService, PriceService>();
 builder.Services.AddSingleton<IRateProvider, InMemoryRateProvider>();
 var app = builder.Build();
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     using (var scope = app.Services.CreateScope())

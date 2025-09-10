@@ -1,0 +1,368 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "name": "Pricing & Supplier API",
+    "description": "A collection of requests for the .NET 9 Pricing & Supplier API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Suppliers",
+      "item": [
+        {
+          "name": "Get All Suppliers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/suppliers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "suppliers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Supplier by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/suppliers/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "suppliers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Supplier",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Supplier from Postman\",\n  \"country\": \"Canada\",\n  \"active\": true,\n  \"preferred\": false,\n  \"leadTimeDays\": 20\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/suppliers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "suppliers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Supplier",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Supplier Name\",\n  \"country\": \"Mexico\",\n  \"active\": true,\n  \"preferred\": true,\n  \"leadTimeDays\": 18\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/suppliers/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "suppliers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Supplier",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/suppliers/5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "suppliers",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/08d12345-abcd-efab-1234-567890abcdef",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "08d12345-abcd-efab-1234-567890abcdef"
+              ],
+              "description": "Note: You will need to replace the GUID with a real one from your database."
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"PMAN-001\",\n  \"name\": \"New Product from Postman\",\n  \"uom\": \"KG\",\n  \"hazardClass\": \"4a\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Product Name\",\n  \"uom\": \"PIECE\",\n  \"hazardClass\": \"N/A\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/08d12345-abcd-efab-1234-567890abcdef",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "08d12345-abcd-efab-1234-567890abcdef"
+              ],
+              "description": "Note: You will need to replace the GUID with a real one from your database."
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/08d12345-abcd-efab-1234-567890abcdef",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "08d12345-abcd-efab-1234-567890abcdef"
+              ],
+              "description": "Note: You will need to replace the GUID with a real one from your database."
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prices",
+      "item": [
+        {
+          "name": "Upload Price List (CSV)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/prices/upload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "prices",
+                "upload"
+              ]
+            },
+            "description": "**IMPORTANT:** In the Body -> form-data tab, you must manually click 'Select Files' to upload your `PriceLists.csv` file."
+          },
+          "response": []
+        },
+        {
+          "name": "List Prices (Filtered & Paginated)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/prices?sku=ABC123&validOn=2025-09-10",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "prices"
+              ],
+              "query": [
+                {
+                  "key": "sku",
+                  "value": "ABC123"
+                },
+                {
+                  "key": "validOn",
+                  "value": "2025-09-10"
+                },
+                {
+                  "key": "currency",
+                  "value": "EUR",
+                  "disabled": true
+                },
+                {
+                  "key": "supplierId",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "pageNumber",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "pageSize",
+                  "value": "10",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pricing Queries",
+      "item": [
+        {
+          "name": "Get Best Price",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{baseUrl}}/pricing/best?sku=ABC123&qty=120&currency=EUR&date=2025-09-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pricing",
+                "best"
+              ],
+              "query": [
+                {
+                  "key": "sku",
+                  "value": "ABC123"
+                },
+                {
+                  "key": "qty",
+                  "value": "120"
+                },
+                {
+                  "key": "currency",
+                  "value": "EUR"
+                },
+                {
+                  "key": "date",
+                  "value": "2025-09-01"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:7286/api",
+      "type": "string"
+    }
+  ]
+}
