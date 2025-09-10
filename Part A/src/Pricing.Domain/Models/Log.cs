@@ -7,4 +7,5 @@ public class Log
     public string? StackTrace { get; set; }
     public string LogLevel { get; set; } = string.Empty;
     public DateTime Timestamp { get; set; }
+    public string? CorrelationId { get; set; }
 }

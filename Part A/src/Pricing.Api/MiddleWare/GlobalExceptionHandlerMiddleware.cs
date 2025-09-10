@@ -35,7 +35,8 @@ public class GlobalExceptionHandlerMiddleware
                     Message = ex.Message,
                     StackTrace = ex.StackTrace,
                     LogLevel = "Error",
-                    Timestamp = DateTime.UtcNow
+                    Timestamp = DateTime.UtcNow,
+                    CorrelationId = context.TraceIdentifier
                 };
                 await dbContext.Logs.AddAsync(log);
                 await dbContext.SaveChangesAsync();
@@ -47,7 +48,8 @@ public class GlobalExceptionHandlerMiddleware
             var response = new
             {
                 StatusCode = context.Response.StatusCode,
-                Message = "An unexpected internal server error has occurred. The issue has been logged."
+                Message = "An unexpected internal server error has occurred. The issue has been logged.",
+                CorrelationId = context.TraceIdentifier
             };
 
             await context.Response.WriteAsync(JsonSerializer.Serialize(response));
