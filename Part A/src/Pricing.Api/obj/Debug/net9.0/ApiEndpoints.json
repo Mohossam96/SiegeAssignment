@@ -1,0 +1,329 @@
+[
+  {
+    "ContainingType": "Pricing.Api.Endpoints.PriceEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPriceEndpoints\u003Eb__0_1",
+    "RelativePath": "api/prices/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sku",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "validOn",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "currency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "supplierId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.PriceEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPriceEndpoints\u003Eb__0_0",
+    "RelativePath": "api/prices/upload",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.PricingQueryEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPricingQueryEndpoints\u003Eb__0_0",
+    "RelativePath": "api/pricing/best",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Sku",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Qty",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Currency",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Date",
+        "Type": "System.DateOnly",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.ProductEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapProductEndpoints\u003Eb__0_0",
+    "RelativePath": "api/products/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Pricing.Application.Products.ProductDto, Pricing.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.ProductEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapProductEndpoints\u003Eb__0_2",
+    "RelativePath": "api/products/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Pricing.Application.Products.CreateProductRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.ProductEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapProductEndpoints\u003Eb__0_1",
+    "RelativePath": "api/products/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetProductById"
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.ProductEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapProductEndpoints\u003Eb__0_3",
+    "RelativePath": "api/products/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Pricing.Application.Products.UpdateProductRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.ProductEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapProductEndpoints\u003Eb__0_4",
+    "RelativePath": "api/products/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.SupplierEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapSupplierEndpoints\u003Eb__0_0",
+    "RelativePath": "api/suppliers/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.SupplierEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapSupplierEndpoints\u003Eb__0_2",
+    "RelativePath": "api/suppliers/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Pricing.Application.Suppliers.CreateSupplierRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.SupplierEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapSupplierEndpoints\u003Eb__0_1",
+    "RelativePath": "api/suppliers/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.SupplierEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapSupplierEndpoints\u003Eb__0_3",
+    "RelativePath": "api/suppliers/{id:int}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Pricing.Application.Suppliers.UpdateSupplierRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Pricing.Api.Endpoints.SupplierEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapSupplierEndpoints\u003Eb__0_4",
+    "RelativePath": "api/suppliers/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

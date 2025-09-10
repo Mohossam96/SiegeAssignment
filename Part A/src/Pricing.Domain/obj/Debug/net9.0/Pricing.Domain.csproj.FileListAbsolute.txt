@@ -1,0 +1,14 @@
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\bin\Debug\net9.0\Pricing.Domain.deps.json
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\bin\Debug\net9.0\Pricing.Domain.runtimeconfig.json
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\bin\Debug\net9.0\Pricing.Domain.dll
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\bin\Debug\net9.0\Pricing.Domain.pdb
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\Pricing.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\Pricing.Domain.AssemblyInfoInputs.cache
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\Pricing.Domain.AssemblyInfo.cs
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\Pricing.Domain.csproj.CoreCompileInputs.cache
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\Pricing.Domain.dll
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\refint\Pricing.Domain.dll
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\Pricing.Domain.pdb
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\Pricing.Domain.genruntimeconfig.cache
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\ref\Pricing.Domain.dll
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Domain\obj\Debug\net9.0\Pricing.Domain.sourcelink.json

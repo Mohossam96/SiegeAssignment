@@ -1,34 +1,38 @@
+using Microsoft.EntityFrameworkCore;
+using Pricing.Api.Endpoints;
+using Pricing.Application.Common.Interfaces;
+using Pricing.Application.Common.Services;
+using Pricing.Application.Prices;
+using Pricing.Application.Products;
+using Pricing.Application.Suppliers;
+using Pricing.Infrastructure.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<PricingDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
 // Add services to the container.
-
+builder.Services.AddScoped<ISupplierService, SupplierService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IPriceService, PriceService>();
+builder.Services.AddSingleton<IRateProvider, InMemoryRateProvider>();
 var app = builder.Build();
-
+if (app.Environment.IsDevelopment())
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<PricingDbContext>();
+        await ApplicationDbContextInitialiser.InitialiseAsync(context);
+    }
+}
 // Configure the HTTP request pipeline.
-
 app.UseHttpsRedirection();
+app.MapSupplierEndpoints();
+app.MapProductEndpoints();
+app.MapPriceEndpoints();
+app.MapPricingQueryEndpoints();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-});
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

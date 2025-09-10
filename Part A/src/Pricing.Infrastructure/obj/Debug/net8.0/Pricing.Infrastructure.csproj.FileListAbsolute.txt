@@ -1,0 +1,17 @@
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\bin\Debug\net8.0\Pricing.Infrastructure.deps.json
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\bin\Debug\net8.0\Pricing.Infrastructure.runtimeconfig.json
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\bin\Debug\net8.0\Pricing.Infrastructure.dll
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\bin\Debug\net8.0\Pricing.Infrastructure.pdb
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\bin\Debug\net8.0\Pricing.Domain.dll
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\bin\Debug\net8.0\Pricing.Domain.pdb
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing.Infrastructure.csproj.AssemblyReference.cache
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing.Infrastructure.AssemblyInfoInputs.cache
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing.Infrastructure.AssemblyInfo.cs
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing..81297163.Up2Date
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing.Infrastructure.dll
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\refint\Pricing.Infrastructure.dll
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing.Infrastructure.pdb
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\Pricing.Infrastructure.genruntimeconfig.cache
+D:\Mohamed\Siege\SiegeAssignment\Part A\src\Pricing.Infrastructure\obj\Debug\net8.0\ref\Pricing.Infrastructure.dll
