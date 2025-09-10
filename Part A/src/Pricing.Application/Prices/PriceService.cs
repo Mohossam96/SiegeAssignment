@@ -2,6 +2,7 @@
 using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Pricing.Application.Common.Interfaces;
 using Pricing.Application.Common.Models;
 using Pricing.Domain;
@@ -15,11 +16,12 @@ public class PriceService : IPriceService
 {
     private readonly PricingDbContext _context;
     private readonly IRateProvider _rateProvider;
-
-    public PriceService(PricingDbContext context, IRateProvider rateProvider)
+    private readonly IMemoryCache _memoryCache;
+    public PriceService(PricingDbContext context, IRateProvider rateProvider, IMemoryCache memoryCache)
     {
         _context = context;
         _rateProvider = rateProvider;
+        _memoryCache = memoryCache;
     }
 
     public async Task<UploadPricesResult> UploadPricesAsync(Stream fileStream, CancellationToken cancellationToken)
@@ -190,6 +192,17 @@ public class PriceService : IPriceService
     }
     public async Task<BestPriceResponse?> GetBestPriceAsync(BestPriceQuery query, CancellationToken cancellationToken)
     {
+        var cacheKey = $"BestPrice_{query.Sku}_{query.Qty}_{query.Currency}_{query.Date:yyyy-MM-dd}";
+
+        //try to get result from cashe
+        if (_memoryCache.TryGetValue(cacheKey, out BestPriceResponse? cachedResult))
+        {
+            if(cachedResult?.Reasoning.Contains(" (from cache)") == false)
+                cachedResult!.Reasoning += " (from cache)";
+            return cachedResult;
+        }
+
+
         // 1. Find all potential candidate prices from the database (no change here)
         var candidates = await _context.Prices
             .Include(p => p.Supplier)
@@ -226,19 +239,22 @@ public class PriceService : IPriceService
         // 4. Construct the response with DYNAMIC REASONING
         var winningPrice = winner.Price;
         var winningRate = winner.ConvertedRate;
-
-        return new BestPriceResponse
+        var result = new BestPriceResponse
         {
-            ChosenSupplier = new BestPriceResponse.SupplierInfo
-            {
-                Id = winningPrice.Supplier.Id,
-                Name = winningPrice.Supplier.Name
-            },
-            UnitPrice = winningRate,
-            TotalPrice = winningRate * query.Qty,
+            // ... (response construction is the same as before) ...
+            ChosenSupplier = new BestPriceResponse.SupplierInfo { Id = winner.Price.Supplier.Id, Name = winner.Price.Supplier.Name },
+            UnitPrice = winner.ConvertedRate,
+            TotalPrice = winner.ConvertedRate * query.Qty,
             Currency = query.Currency,
             Reasoning = GenerateReasoning(winner, enrichedCandidates, candidates.Count)
         };
+
+        var cacheOptions = new MemoryCacheEntryOptions()
+        .SetAbsoluteExpiration(TimeSpan.FromSeconds(60)); // Cache for 60 seconds
+
+        _memoryCache.Set(cacheKey, result, cacheOptions);
+
+        return result;
     }
 
     private string GenerateReasoning((Price Price, decimal ConvertedRate) winner, List<(Price Price, decimal ConvertedRate)> candidates, int initialCandidateCount)
