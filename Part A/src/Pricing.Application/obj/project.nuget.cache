@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "e67NXZBXQjg=",
+  "success": true,
+  "projectFilePath": "D:\\Mohamed\\Siege\\SiegeAssignment\\Part A\\src\\Pricing.Application\\Pricing.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mohamed.hhosny\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.17\\microsoft.netcore.app.ref.8.0.17.nupkg.sha512",
+    "C:\\Users\\Mohamed.hhosny\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.17\\microsoft.windowsdesktop.app.ref.8.0.17.nupkg.sha512",
+    "C:\\Users\\Mohamed.hhosny\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.17\\microsoft.aspnetcore.app.ref.8.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}
